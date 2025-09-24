@@ -1,0 +1,84 @@
+.web {
+    float: left;
+    color: black;
+}
+
+ul li {
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: row;
+    float: right;
+
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+.Btn{
+    background-color: black;  
+    border: 2px solid; 
+    border-radius: 5px; 
+    padding: 10px 10px;
+}
+.Btn a{
+    color: white;
+
+}
+
+.shared {
+    text-align: center;
+    margin: 30px;
+}
+.headingss{
+    font-size: xx-large; 
+}
+
+.toute {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    height: 550px;
+
+
+}
+
+.Basic {
+    border: 2px solid wheat;
+    text-align: center;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.card {
+    border: 2px outset white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    font-size: smaller;
+    text-align: center;
+    margin: 20px;
+    border-radius: 15px;
+    height: auto;
+    width: 100%;
+    padding: 25px;
+}
+.accept{
+    display: flex; 
+    background:#f0f0f0; 
+    border-radius: 8px 8px; 
+    padding:10px 10px;
+}
+.get {
+    background-color: black;
+
+
+}
+
+.get a {
+    text-decoration: none;
+    color: white;
+}
+
+.space {
+    display: flex;
+    justify-content: space-around;
+}
