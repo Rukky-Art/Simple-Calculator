@@ -1,0 +1,157 @@
+<html>
+
+<head>
+  <title>A Simple Calculator</title>
+
+  <script>
+
+    function pressbtn(btn) {
+      if (btn == '=') {
+        let x = document.getElementById("screen").value;
+        try {
+          let soln = eval(x);
+          document.getElementById("screen").value = soln;
+        } catch {
+          document.getElementById("screen").value = "Error";
+        }
+      } else {
+        let x = document.getElementById("screen").value;
+        let y = x + "" + btn;
+        document.getElementById("screen").value = y;
+      }
+    }
+
+    function delbtn() {
+      let x = document.getElementById("screen").value;
+      let y = x.slice(0, -1);
+      document.getElementById("screen").value = y;
+    }
+
+    function cbtn() {
+      document.getElementById("screen").value = "";
+    }
+  </script>
+
+  <style>
+    body {
+      background: #1e1e1e;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: #2b2b2b;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    h4 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #ffcc00;
+    }
+
+    #screen {
+      width: 100%;
+      background: #111;
+      border: none;
+      border-radius: 8px;
+      height: 50px;
+      font-size: 20px;
+      padding: 8px;
+      margin-bottom: 15px;
+      text-align: right;
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 70px);
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .btnclass {
+      background: #3a3a3a;
+      border: none;
+      border-radius: 8px;
+      height: 50px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btnclass:hover {
+      background: #555;
+    }
+
+    .btnclass:active {
+      background: #777;
+      transform: scale(0.95);
+    }
+
+    /* Special buttons */
+    .btn-op {
+      background: #ff9500;
+    }
+
+    .btn-op:hover {
+      background: #e08900;
+    }
+
+    .btn-equal {
+      background: #28a745;
+    }
+
+    .btn-equal:hover {
+      background: #218838;
+    }
+
+    .btn-del {
+      background: #dc3545;
+    }
+
+    .btn-del:hover {
+      background: #c82333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="calculator">
+    <h4>A simple calculator</h4>
+    <input id="screen" type="text" readonly />
+
+    <div class="grid">
+      <button class="btnclass" onclick="pressbtn(9)">9</button>
+      <button class="btnclass" onclick="pressbtn(8)">8</button>
+      <button class="btnclass" onclick="pressbtn(7)">7</button>
+      <button class="btnclass btn-op" onclick="pressbtn('+')">+</button>
+
+      <button class="btnclass" onclick="pressbtn(6)">6</button>
+      <button class="btnclass" onclick="pressbtn(5)">5</button>
+      <button class="btnclass" onclick="pressbtn(4)">4</button>
+      <button class="btnclass btn-op" onclick="pressbtn('-')">-</button>
+
+      <button class="btnclass" onclick="pressbtn(3)">3</button>
+      <button class="btnclass" onclick="pressbtn(2)">2</button>
+      <button class="btnclass" onclick="pressbtn(1)">1</button>
+      <button class="btnclass btn-op" onclick="pressbtn('*')">×</button>
+
+      <button class="btnclass" onclick="pressbtn(0)">0</button>
+      <button class="btnclass btn-op" onclick="pressbtn('/')">÷</button>
+      <button class="btnclass btn-equal" onclick="pressbtn('=')">=</button>
+      <button class="btnclass btn-del" onclick="delbtn()">Del</button>
+
+      <button class="btnclass" style="grid-column: span 4;" onclick="cbtn()">C</button>
+    </div>
+  </div>
+</body>
+
+</html>
